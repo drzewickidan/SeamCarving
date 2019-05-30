@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28922.388
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeamCarving", "SeamCarving\SeamCarving.csproj", "{591F9578-2DA0-47C4-A638-301898BC60CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeamCarving", "SeamCarving\SeamCarving.csproj", "{591F9578-2DA0-47C4-A638-301898BC60CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeamCarving.Web", "SeamCarving.Web\SeamCarving.Web.csproj", "{EA85E800-52A8-4089-8FAD-3113061B6B3C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{591F9578-2DA0-47C4-A638-301898BC60CC} = {591F9578-2DA0-47C4-A638-301898BC60CC}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{591F9578-2DA0-47C4-A638-301898BC60CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{591F9578-2DA0-47C4-A638-301898BC60CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{591F9578-2DA0-47C4-A638-301898BC60CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA85E800-52A8-4089-8FAD-3113061B6B3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA85E800-52A8-4089-8FAD-3113061B6B3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA85E800-52A8-4089-8FAD-3113061B6B3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA85E800-52A8-4089-8FAD-3113061B6B3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

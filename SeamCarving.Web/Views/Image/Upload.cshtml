@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Upload";
+}
+
+@model List<ImageResult>
+
+
+
+<h2>Upload</h2>
+<div class="container body-content">
+    <form method="post" enctype="multipart/form-data" asp-controller="UploadFile" asp-action="Index">
+        <div class="form-group">
+            <div class="col-md-10">
+                <p>Upload image:</p>
+                <input type="file" name="file">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10">
+                <p> </p>
+                <input type="submit" value="Resize">
+            </div>
+        </div>
+    </form>
+
+
+
+</div>
+
+
+<div class="result">
+    @if (Model != null)
+    {
+        foreach (var image in Model)
+        {
+
+            var base64 = Convert.ToBase64String(image.FileArray);
+            var imgSrc = String.Format("data:{0};base64,{1}", image.ContentType, base64);
+            <p><br />Selected image:</p>
+            <img src="@imgSrc" />
+        }
+    }
+</div>

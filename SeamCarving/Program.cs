@@ -3,37 +3,32 @@ using OpenCvSharp;
 
 namespace SeamCarving
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static byte[] Resize(byte[] file)
         {
+            byte[] output;
             Mat imageGradient = new Mat();
             Mat imageEnergy = new Mat();
-            Mat testImage = Cv2.ImRead("F:\\Users\\Daniel\\Documents\\Visual Studio 2019\\SeamCarving\\SeamCarving\\SeamCarving\\test.jpg", ImreadModes.Color);
-            Console.WriteLine($"{testImage.Width}");
 
-            var watch = System.Diagnostics.Stopwatch.StartNew();
+            Mat image = Cv2.ImDecode(file, ImreadModes.AnyColor);
 
             for (int i = 0; i < 100; i++)
             {
                 if (i % 10 == 0)
                 {
-                    imageGradient = CalculateImageGradient(testImage);
+                    imageGradient = CalculateImageGradient(image);
                     imageEnergy = CalculateImageEnergy(imageGradient, 1);
                 }
 
-                testImage = FindSeam(imageEnergy, testImage, 1, i + 1);
+                image = FindSeam(imageEnergy, image, 1, i + 1);
             }
 
-            watch.Stop();
-            var elapsedMs = watch.ElapsedMilliseconds;
-            Console.WriteLine($"Elapsed: {elapsedMs}");
-
-            Console.WriteLine($"{testImage.Width}");
-            Window.ShowImages(testImage);
+            Cv2.ImEncode(".jpg", image, out output);
+            return output;
         }
 
-        public static Mat CalculateImageGradient(Mat input)
+        private static Mat CalculateImageGradient(Mat input)
         {
             Mat greyScale = new Mat();
             Mat gradX = new Mat();
@@ -55,7 +50,7 @@ namespace SeamCarving
             return grad;
         }
 
-        public static Mat CalculateImageEnergy(Mat input, int direction)
+        private static Mat CalculateImageEnergy(Mat input, int direction)
         {
             int numRows = input.Rows;
             int numCols = input.Cols;
@@ -99,7 +94,7 @@ namespace SeamCarving
             return energy;
         }
 
-        public static Mat FindSeam(Mat energyMap, Mat originalImage, int direction, int iteration)
+        private static Mat FindSeam(Mat energyMap, Mat originalImage, int direction, int iteration)
         {
             int numRows = originalImage.Rows;
             int numCols = originalImage.Cols;

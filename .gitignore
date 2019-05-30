@@ -3,3 +3,24 @@
 ################################################################################
 
 /SeamCarving.Web/bin/Debug/netcoreapp2.1/dll
+/SeamCarving.Web/bin/Debug/netcoreapp2.1/SeamCarving.Web.Views.pdb
+/SeamCarving.Web/bin/Debug/netcoreapp2.1/SeamCarving.Web.Views.dll
+/SeamCarving.Web/bin/Debug/netcoreapp2.1/SeamCarving.Web.runtimeconfig.json
+/SeamCarving.Web/bin/Debug/netcoreapp2.1/SeamCarving.Web.runtimeconfig.dev.json
+/SeamCarving.Web/bin/Debug/netcoreapp2.1/SeamCarving.Web.pdb
+/SeamCarving.Web/bin/Debug/netcoreapp2.1/SeamCarving.Web.dll
+/SeamCarving.Web/bin/Debug/netcoreapp2.1/SeamCarving.Web.deps.json
+/SeamCarving.Web/bin/Debug/netcoreapp2.1/SeamCarving.pdb
+/SeamCarving.Web/bin/Debug/netcoreapp2.1/SeamCarving.dll
+/SeamCarving.Web/obj
+/SeamCarving.Web/Properties
+/packages
+/.vs/SeamCarving
+/SeamCarving/obj
+/SeamCarving/bin/Debug/netcoreapp2.1
+/SeamCarving.Web/wwwroot/lib
+/SeamCarving.Web/appsettings.Development.json
+/SeamCarving.Web/appsettings.json
+/SeamCarving.Web/SeamCarving.Web.csproj
+/SeamCarving.Web/SeamCarving.Web.csproj.user
+/SeamCarving/SeamCarving.csproj.user
