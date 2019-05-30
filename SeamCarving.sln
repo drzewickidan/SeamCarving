@@ -10,6 +10,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeamCarving.Web", "SeamCarv
 		{591F9578-2DA0-47C4-A638-301898BC60CC} = {591F9578-2DA0-47C4-A638-301898BC60CC}
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{23C6FEBB-760D-41ED-A7A1-B9AD31DE6B65}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
