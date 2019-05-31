@@ -9,23 +9,66 @@
 <h2>Upload</h2>
 <div class="container body-content">
     <form method="post" enctype="multipart/form-data" asp-controller="UploadFile" asp-action="Index">
-        <div class="form-group">
-            <div class="col-md-10">
-                <p>Upload image:</p>
-                <input type="file" name="file">
+        <div class="col-md-10">
+            <div class="input-group">
+                <label class="input-group-btn">
+                    <span class="btn btn-primary">
+                        Browse&hellip; <input type="file" name="file" style="display: none;">
+                    </span>
+                </label>
+                <input type="text" class="form-control" style="width:40%" readonly />
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-inline" >
             <div class="col-md-10">
                 <p> </p>
-                <input type="submit" value="Resize">
+                <label for="text">Width:</label>
+                <input type="text" name="width" class="form-control" style="width:58px">
+                <label for="text">Height:</label>
+                <input type="text" name="height" class="form-control" style="width:58px">
+            </div>
+        </div>
+        <div class="form-group" >
+            <div class="col-md-10">
+                <p> </p>
+                <input type="submit" value="Resize" class="btn btn-primary">
             </div>
         </div>
     </form>
-
-
-
 </div>
+
+
+@section  scripts {
+<script>
+    $(function () {
+
+        // We can attach the `fileselect` event to all file inputs on the page
+        $(document).on('change', ':file', function () {
+            var input = $(this),
+                numFiles = input.get(0).files ? input.get(0).files.length : 1,
+                label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+            input.trigger('fileselect', [numFiles, label]);
+        });
+
+        // We can watch for our custom `fileselect` event like this
+        $(document).ready(function () {
+            $(':file').on('fileselect', function (event, numFiles, label) {
+
+                var input = $(this).parents('.input-group').find(':text'),
+                    log = numFiles > 1 ? numFiles + ' files selected' : label;
+
+                if (input.length) {
+                    input.val(log);
+                } else {
+                    if (log) alert(log);
+                }
+
+            });
+        });
+
+    });
+</script>
+}
 
 
 <div class="result">
@@ -36,7 +79,7 @@
 
             var base64 = Convert.ToBase64String(image.FileArray);
             var imgSrc = String.Format("data:{0};base64,{1}", image.ContentType, base64);
-            <p><br />Selected image:</p>
+            <p><br />Resized image:</p>
             <img src="@imgSrc" />
         }
     }

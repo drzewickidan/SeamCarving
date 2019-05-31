@@ -19,8 +19,10 @@ namespace SeamCarving.Web.Controllers
         }
 
         [HttpPost("UploadFile")]
-        public IActionResult Post(List<IFormFile> file)
+        public IActionResult Post(List<IFormFile> file, int width)
         {
+            
+
             List<ImageResult> images = new List<ImageResult>();
             foreach (var formFile in file)
             {
@@ -31,7 +33,7 @@ namespace SeamCarving.Web.Controllers
                         formFile.CopyTo(ms);
                         byte[] fileBytes = ms.ToArray();
 
-                        fileBytes = SeamCarving.Program.Resize(fileBytes);
+                        fileBytes = SeamCarving.Program.Resize(fileBytes, width);
                         images.Add(new ImageResult() { FileArray = fileBytes, ContentType = formFile.ContentType });
                     }
                 }
