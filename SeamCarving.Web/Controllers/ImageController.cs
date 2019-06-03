@@ -33,7 +33,7 @@ namespace SeamCarving.Web.Controllers
                         formFile.CopyTo(ms);
                         byte[] fileBytes = ms.ToArray();
 
-                        fileBytes = SeamCarving.Program.Resize(fileBytes, width);
+                        fileBytes = SeamCarving.App.Program.Resize(fileBytes, width);
                         images.Add(new ImageResult() { FileArray = fileBytes, ContentType = formFile.ContentType });
                     }
                 }

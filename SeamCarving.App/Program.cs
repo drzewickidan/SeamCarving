@@ -1,7 +1,7 @@
 ﻿using System;
 using OpenCvSharp;
 
-namespace SeamCarving
+namespace SeamCarving.App
 {
     public class Program
     {

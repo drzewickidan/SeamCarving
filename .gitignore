@@ -26,3 +26,7 @@
 /SeamCarving/SeamCarving.csproj.user
 /SeamCarving/bin/Release/netcoreapp2.1
 /SeamCarving.Web/bin/Release/netcoreapp2.1
+/SeamCarving/SeamCarving.App.csproj
+/SeamCarving.App/obj/Debug/netcoreapp2.1
+/SeamCarving.App/obj
+/SeamCarving.App/SeamCarving.App.csproj
